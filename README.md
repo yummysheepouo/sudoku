@@ -27,37 +27,37 @@ This Python program creates an interactive Sudoku puzzle game with a command-lin
    - Error highlighting (red) for incorrect values 錯誤值突出顯示（紅色）
    - Bold separators between 3x3 Sudoku boxes 3x3 數獨框之間的粗體分隔符
 
-4. **Puzzle Generation**
+4. **Puzzle Generation 數獨生成**
    ```python
    def randomize_puzzle(puzzle):  # Creates playable puzzle
    ```
-   - Randomly clears 30 cells from solution to create playable puzzle
-   - Maintains solvable state while providing challenge
+   - Randomly clears 30 cells from solution to create playable puzzle 隨機清除解決方案中的 30 個單元格以創建可玩的謎題
+   - Maintains solvable state while providing challenge 在提供挑戰的同時保持可解狀態
 
-### Technical Components
+### Technical Components 技術組件
 1. **File Management**
-   - Automatic directory creation (`puzzle/`)
-   - Solution preservation between sessions
-   - File error handling
+   - Automatic directory creation (`puzzle/`) 自動目錄建立（`puzzle/`）
+   - Solution preservation between sessions 保存玩家進度
+   - File error handling 文件錯誤處理
 
-2. **Input Validation**
-   - Robust input checking across all menus
-   - Move validation (position availability, digit checks)
-   - Error prevention for invalid inputs
+2. **Input Validation 輸入驗證**
+   - Robust input checking across all menus 對所有選單進行強大的輸入檢查
+   - Move validation (position availability, digit checks) 行動驗證（位置可用性、數位檢查）
+   - Error prevention for invalid inputs 預防無效值的輸入
 
-3. **User Flow**
+3. **User Flow 使用者流程**
    ```
    Main Menu > Load Puzzle > Solve/Check > Reset/Exit
    ```
-   - Intuitive menu navigation
-   - Contextual help messages
-   - Progress saving during gameplay
+   - Intuitive menu navigation 直接的菜單導航
+   - Contextual help messages 上下文幫助訊息
+   - Progress saving during gameplay 遊戲過程中保存進度
 
-### Execution
+### Execution 執行
 Run from command line:
 ```bash
 python sudoku_puzzle.py
 ```
-The program guides users through puzzle selection and solving with visual feedback and error handling.
+The program guides users through puzzle selection and solving with visual feedback and error handling.<br><br>該程式透過視覺回饋和錯誤處理指導用戶選擇和解決謎題。
 
-This implementation demonstrates file I/O operations, user input validation, grid-based display formatting, and state management in a console application. The color-coded interface and immediate feedback create an engaging puzzle-solving experience while maintaining data integrity through file-based storage.
+This implementation demonstrates file I/O operations, user input validation, grid-based display formatting, and state management in a console application. The color-coded interface and immediate feedback create an engaging puzzle-solving experience while maintaining data integrity through file-based storage.<br><br>此實作演示了控制台應用程式中的檔案 I/O 操作、使用者輸入驗證、基於網格的顯示格式以及狀態管理。彩色編碼介面和即時回饋營造出引人入勝的解謎體驗，同時透過基於檔案的儲存保持資料完整性。
