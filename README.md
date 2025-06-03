@@ -2,30 +2,30 @@
 Author: Yummysheep <br> You are allowed to copy, download, rewrite or use it personally 
 <br><br>作者：Yummysheep<br>您可以複製、下載、改寫或個人使用
 
-### Introduction to the Sudoku Puzzle Program
+### Introduction to the Sudoku Puzzle Program 數獨謎題程序簡介
 This Python program creates an interactive Sudoku puzzle game with a command-line interface. It features puzzle loading, solving, validation, and management capabilities, using color-coded visuals for an enhanced user experience.
 <br><br>這個 Python 程式創建了一個帶有命令列介面的互動式數獨益智遊戲。它具有謎題載入、求解、驗證和管理功能，並使用顏色編碼的視覺效果來增強使用者體驗。
 ### Core Features 核心特點
 1. **Puzzle Management System 數獨管理系統**
-   - Stores puzzles in a dedicated directory with solution files
-   - Auto-generates puzzle files on first run
-   - Supports three built-in puzzles with solutions
-   - Reset functionality to restore puzzles to original state
+   - Stores puzzles in a dedicated directory with solution files 將謎題與解決方案檔案一起儲存在專用目錄中
+   - Auto-generates puzzle files on first run 首次運行時自動產生拼圖文件
+   - Supports three built-in puzzles with solutions 支援三個內置謎題及其解決方案
+   - Reset functionality to restore puzzles to the original state 重置功能可將拼圖恢復到原始狀態
 
-2. **Interactive Game Modes**
+2. **Interactive Game Modes 互動遊戲模式**
    ```python
    def solve_puzzle(puzzle, file_path):  # Main solving interface
    def check_puzzle(puzzle, file_path):   # Solution validation
    ```
-   - `Solve Mode`: Players input moves using `row, column, number` format
-   - `Check Mode`: Compare player's solution against correct answer with error highlighting
-   - Move-by-move saving system
+   - `Solve Mode 遊玩模式`: Players input moves using `row, column, number` format 玩家使用「行、列、數字」格式輸入動作
+   - `Check Mode 檢查答案`: Compare player's solution against correct answer with error highlighting 將玩家的解決方案與正確答案進行比較，並突出顯示錯誤
+   - Move-by-move saving system 逐步儲存系統
 
-3. **Visual Interface**
-   - Colorama library for terminal coloring
-   - Grid layout with row/column indicators
-   - Error highlighting (red) for incorrect values
-   - Bold separators between 3x3 Sudoku boxes
+3. **Visual Interface 可視化介面**
+   - Colorama library for terminal colouring 使用了終端著色的 Colorama 庫
+   - Grid layout with row/column indicators 帶有行/列指示符的網格佈局
+   - Error highlighting (red) for incorrect values 錯誤值突出顯示（紅色）
+   - Bold separators between 3x3 Sudoku boxes 3x3 數獨框之間的粗體分隔符
 
 4. **Puzzle Generation**
    ```python
