@@ -1,6 +1,7 @@
 # Python-based Sudoku 基於 Python 的數獨
 Author: Yummysheep <br> You are allowed to copy, download, rewrite or use it personally 
 <br><br>作者：Yummysheep<br>您可以複製、下載、改寫或個人使用
+# HKDSE ICT RELATED 香港文憑考試ICT科相關
 
 ### Introduction to the Sudoku Puzzle Program 數獨謎題程序簡介
 This Python program creates an interactive Sudoku puzzle game with a command-line interface. It features puzzle loading, solving, validation, and management capabilities, using color-coded visuals for an enhanced user experience.
