@@ -147,18 +147,41 @@ def print_puzzle(puzzle, solution=None):
             print("  +" + "---+" * 9)
 
 def solve_puzzle(puzzle, file_path):
+    history = []
     
     print_puzzle(puzzle)
     print(Back.GREEN + Fore.WHITE + Style.BRIGHT + "Entered Solve puzzle mode" + Style.RESET_ALL)
+    print(Fore.YELLOW + "Tip: Enter 'U' to undo your last move" + Style.RESET_ALL)  
 
     while True:
         time.sleep(0.5)
-        move = input(Fore.BLUE + "Enter your move (row, column, number) or 'X' to exit: " + Style.RESET_ALL).strip().upper()
+       
+        move = input(Fore.BLUE + "Enter your move (row, column, number), 'U' to undo last move, or 'X' to exit: " + Style.RESET_ALL).strip().upper()
 
         if move == 'X':
             print(Back.RED + Fore.WHITE + Style.BRIGHT + "Exiting solve puzzle mode. Progress Saved" + Style.RESET_ALL)
             time.sleep(0.5)
             break
+            
+        
+        if move == 'U':
+            if history:
+                
+                row, col, original_value = history.pop()
+                
+                puzzle[row][col] = original_value
+                
+                
+                os.makedirs(os.path.dirname(file_path), exist_ok=True)
+                with open(file_path, 'w') as file:
+                    for row_data in puzzle:
+                        file.write("".join(row_data) + "\n")
+                
+                print(Back.GREEN + Fore.WHITE + Style.BRIGHT + "Undo successful! Last move has been reverted." + Style.RESET_ALL)
+                print_puzzle(puzzle)
+            else:
+                print(Back.RED + Fore.WHITE + Style.BRIGHT + "No moves to undo." + Style.RESET_ALL)
+            continue
 
         if len(move) != 3 or not move.isdigit():
             print(Back.RED + Fore.WHITE + Style.BRIGHT + "Invalid input format. Use 'row column number' (e.g. 359)." + Style.RESET_ALL)
@@ -174,6 +197,8 @@ def solve_puzzle(puzzle, file_path):
             print(Back.RED + Fore.WHITE + Style.BRIGHT + f"Error: Position {row+1}, {col+1} is already occupied." + Style.RESET_ALL)
             continue
 
+
+        history.append((row, col, puzzle[row][col]))
         puzzle[row][col] = num
 
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
@@ -301,8 +326,12 @@ def main_menu():
                 puzzle = None
                 file_path = None
         elif choice == 'X':
-            exit_choice = input(Fore.RED + "Are you sure to exit? Progress won't be saved! Input Y to exit or N to stay: ").strip().upper()
-            if exit_choice == 'Y':
+            exit_choice = input(Fore.RED + "Are you sure to exit? Input \n'Y' to exit and reset all puzzles \n'X' to exit but save the progress\nOtherwise type anything to cancel exiting\n\nYour Input: ").strip().upper()
+            if exit_choice == 'X':
+                print(Back.RED + Fore.WHITE + Style.BRIGHT + "Exiting the program." + Style.RESET_ALL)
+                time.sleep(0.5)
+                break
+            elif exit_choice == 'Y':
                 print(Back.RED + Fore.WHITE + Style.BRIGHT + "Exiting the program." + Style.RESET_ALL)
                 time.sleep(0.5)
                 
@@ -314,7 +343,7 @@ def main_menu():
                         try:
                             shutil.copyfile(solution_file, puzzle_file)
                         except Exception as e:
-                            print(Back.RED + Fore.WHITE + Style.BRIGHT + f"Error updating puzzle{i}.txt: {str(e)}" + Style.RESET_ALL)
+                            print(Back.RED + Fore.WHITE + Style.BRIGHT + f"Error to reset puzzle: {str(e)}" + Style.RESET_ALL)
                     else:
                         print(Back.YELLOW + Fore.BLACK + Style.BRIGHT + f"Solution file for puzzle{i} not found" + Style.RESET_ALL)
                 
@@ -355,4 +384,6 @@ def main_menu():
 
 if __name__ == "__main__":
     main_menu()
+
+
 
