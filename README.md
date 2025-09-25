@@ -1,1 +1,3 @@
-# Just a simple Sudoku game based on pygame, nothing special, just for homework :)
+### Before executing the program, please make sure your IDE has installed the following REQUIRED dependencies.
+
+- pygame
