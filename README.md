@@ -17,7 +17,7 @@ A simple Sudoku built in python with pygame. It features
 - Basic music and sound effect playing functionality
 - Setting customizable game options and preferences
 - Timer and pause functionality
-- Hint system for beginners
+- Hint system for beginner
 
 
 # Installation Guide
