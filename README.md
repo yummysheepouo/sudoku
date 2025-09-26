@@ -7,9 +7,9 @@
 pip install pygame
 ```
 ---
-# Fixed and Updated
+# Log
 ### 26/9/2025
-- Fixed Puzzle 1 to 3 have duplicated numbers in same row or colume
+- Fixed Puzzle 1 to 3 has duplicated numbers in the same row or column
 - Fixed collision detection bugs in Puzzle 4
 - Updated UI elements and improved game performance
 - Added sound effects and background music
