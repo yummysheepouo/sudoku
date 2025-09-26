@@ -6,4 +6,8 @@
 ```
 pip install pygame
 ```
-# Have Fun!
+---
+# Bug Resolved
+### 26/9/2025
+- Fixed Puzzle 1 to 3 have duplicated numbers in same row or colume
+
