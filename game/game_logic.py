@@ -1,14 +1,13 @@
 import pygame
 import random
-from puzzles import randomize_puzzle
-from dialogs import SettingsDialog, SaveLoadDialog, Dialog
-from particles import Particle
-from sounds import load_sound, initialize_background_music
-from constants import *
-from ui_components import Button, ImageButton, sound_click
-from settings import *
-from sounds import sound_click, sound_success, sound_error, sound_win, background_music_path, music_available
-from puzzles import initialize_puzzle_files
+from .puzzles import randomize_puzzle
+from .dialogs import SettingsDialog, SaveLoadDialog, Dialog
+from .particles import Particle
+from .constants import *
+from .ui_components import Button, ImageButton, sound_click
+from .settings import *
+from .sounds import sound_click, sound_success, sound_error, sound_win, background_music_path, music_available
+from .puzzles import initialize_puzzle_files
 import os
 import sys
 import time

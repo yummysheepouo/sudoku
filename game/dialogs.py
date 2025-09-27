@@ -1,7 +1,7 @@
-from ui_components import Button, Slider
-from constants import *
+from game.ui_components import Button, Slider
+from game.constants import *
 import pygame
-from settings import load_settings, save_settings
+from game.settings import load_settings, save_settings
 import os
 import json
 import datetime

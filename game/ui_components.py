@@ -1,7 +1,7 @@
 import pygame
-from constants import *
+from game.constants import *
 import time
-from sounds import sound_click
+from game.sounds import sound_click
 
 class Button:
     def __init__(self, x, y, w, h, text="", color=LIGHT_GRAY, hover_color=GRAY, action=None, font_size=22, enabled=True, animated=False):

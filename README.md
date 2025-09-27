@@ -35,6 +35,16 @@ python main.py
 ```
 ---
 # Log
+### 27/9/2025
+Add core game components including:
+- constants.py for game configuration
+- dialogs.py for UI interactions
+- game_logic.py for main gameplay mechanics
+- particles.py for visual effects
+- puzzles.py for puzzle implementations
+- settings.py for user preferences
+- sounds.py for audio management
+- ui_components.py for reusable UI elements
 ### 26/9/2025
 - Fixed Puzzle 1 to 3 has duplicated numbers in the same row or column
 - Fixed collision detection bugs in Puzzle 4

@@ -1,6 +1,6 @@
 import pygame
 import random
-from constants import *
+from game.constants import *
 
 class Particle:
     def __init__(self, x, y):
@@ -17,12 +17,3 @@ class Particle:
             surf = pygame.Surface((self.size, self.size), pygame.SRCALPHA)
             pygame.draw.circle(surf, (*self.color[:3], alpha), (self.size//2, self.size//2), self.size//2)
             screen.blit(surf, (int(self.x), int(self.y)))
-
-    def __init__(self, x, y):
-        ...
-
-    def update(self):
-        ...
-
-    def draw(self, screen):
-        ...
