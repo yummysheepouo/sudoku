@@ -40,7 +40,7 @@ class SudokuGame:
         self.alert_message = ""; self.alert_color = RED; self.alert_time = 0
 
         # timer
-        self.start_time = None; self.timer_paused = False; self.paused_time = 0
+        self.start_time = None; self.timer_paused = False; self.paused_time = 0; self.final_time = None
 
         # dialog
         self.current_dialog = None
@@ -417,8 +417,13 @@ class SudokuGame:
             self.screen.blit(t, rect)
 
     def draw_timer(self):
-        if self.start_time and not self.timer_paused:
-            elapsed = int(time.time() - self.start_time - self.paused_time)
+        if self.start_time:
+            if self.final_time is not None:
+                elapsed = self.final_time
+            elif not self.timer_paused:
+                elapsed = int(time.time() - self.start_time - self.paused_time)
+            else:
+                elapsed = int(self.paused_time)
             timer_text = self.small_font.render(f"Time: {elapsed//60}:{elapsed%60:02}", True, BLACK)
             timer_rect = timer_text.get_rect(topleft=(20,20))
             bg = pygame.Rect(timer_rect.left - 10, timer_rect.top - 5, timer_rect.width + 20, timer_rect.height + 10)
@@ -684,8 +689,11 @@ class SudokuGame:
                 if self.sound_win: self.sound_win.play()
                 self.show_alert("[SUCCESS] Congratulations! All answers are correct!", GREEN)
                 for b in self.game_buttons:
-                    if b.text not in ["Main Menu", "Save Progress"]:
+                    if b.text != "Main Menu":
                         b.enabled = False
+                # Stop the timer and record final time
+                self.timer_paused = True
+                self.final_time = int(time.time() - self.start_time - self.paused_time)
             else:
                 self.show_alert("[WARNING] Some cells are incorrect - only incorrect cells can be modified", YELLOW)
                 if self.sound_error: self.sound_error.play()
